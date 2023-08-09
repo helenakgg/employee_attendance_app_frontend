@@ -6,7 +6,7 @@ export default function ProtectedRoute ({
 }) {
     const { id } = useSelector(state => {
         return {
-            id : state.auth.idd
+            id : state.auth.id
         }
     })
     return id ? children : <Navigate to="/login" replace/>

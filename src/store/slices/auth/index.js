@@ -10,13 +10,12 @@ const INITIAL_STATE = {
     isKeepLoginLoading: false,
     isLogoutLoading: false,
     id: null,
-    role_id: null,
+    roleId: null,
     email: "",
     fullname: "",
     birthdate: "",
-    join_date: "",
-    salary:"",
-    shift_id:""
+    joinDate: "",
+    shift_id: null
 };
 
 const authSlice = createSlice({
@@ -30,13 +29,12 @@ const authSlice = createSlice({
             state = Object.assign(state, {
                 isLoginLoading : false,
                 id: action.payload?.id,
-                role_id: action.payload?.role_id,
+                roleId: action.payload?.roleId,
                 email: action.payload?.email,
                 fullname: action.payload?.fullname,
                 birthdate: action.payload?.birthdate,
-                join_date: action.payload?.join_date,
-                salary: action.payload?.salary,
-                shift_id: action.payload?.shift_id
+                joinDate: action.payload?.joinDate,
+                shiftId: action.payload?.shiftId
             })
         },
         [login.rejected] : (state, action) => {
@@ -49,13 +47,12 @@ const authSlice = createSlice({
             state = Object.assign(state,{
                 isKeepLoginLoading : false,
                 id: action.payload?.id,
-                role_id: action.payload?.role_id,
+                roleId: action.payload?.roleId,
                 email: action.payload?.email,
                 fullname: action.payload?.fullname,
                 birthdate: action.payload?.birthdate,
-                join_date: action.payload?.join_date,
-                salary: action.payload?.salary,
-                shift_id: action.payload?.shift_id
+                joinDate: action.payload?.joinDate,
+                shiftId: action.payload?.shiftId
             })
         },
         [keepLogin.rejected] : (state, action) => {

@@ -1,8 +1,8 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { Dropdown, Navbar, Avatar } from 'flowbite-react';
-import { logout } from '../../store/slices/auth/slices';
-import logo from '../../assets/cashierlogo2.png';
+import { logout } from '../store/slices/auth/slices';
+import logo from '../assets/logo2.png'
 
 export default function NavbarHeader (){
     // @hooks
@@ -11,12 +11,10 @@ export default function NavbarHeader (){
     const handleLogout = () => {
         dispatch(logout());
     }
-    const { username, email, profileImg } = useSelector(state => {
+    const { fullname, email } = useSelector(state => {
         return {
-            username : state.auth?.username,
-            email : state.auth?.email,
-            profileImg : state.auth?.profileImg,
-
+            fullname : state.auth?.fullname,
+            email : state.auth?.email
         }
     })
     return (
@@ -31,23 +29,23 @@ export default function NavbarHeader (){
                 src={logo}
                 />
                 <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white cursor-pointer">
-                Cashier App
+                Attend App
                 </span>
             </Navbar.Brand>
             <div className="flex md:order-2">
                 <Dropdown
                 inline
                 label={
-                    <img
-                        className="w-8 h-8 rounded-full"
-                        src={profileImg}
-                        alt="user photo"
-                        />
+                    <label tabIndex={0} className="btn btn-ghost btn-circle avatar placeholder">
+                        <div className="bg-neutral-focus text-neutral-content rounded-full w-12">
+                            <span>{fullname[0]?.toUpperCase()}</span>
+                        </div>
+				    </label>
                 }
                 >
                 <Dropdown.Header>
                     <span className="block text-sm">
-                    {username}
+                    {fullname}
                     </span>
                     <span className="block truncate text-sm font-medium">
                     {email}
