@@ -1,10 +1,10 @@
 import React, {useState} from 'react'
 
-const FormCreateEmployee = () => {
+const FormEditEmployee = () => {
   return (
     <div>
         <h1 className="title">Employees</h1>
-        <h2 className="subtitle"> Create New Employee </h2>
+        <h2 className="subtitle"> Edit Employee </h2>
         <div className="card is-shadowless">
             <div className="card-content">
                 <div className="content">
@@ -110,7 +110,7 @@ const FormCreateEmployee = () => {
                             <div className="field">
                                 <div className="control">
                                 <button type="submit" className="button is-danger">
-                                    Save
+                                    Update
                                 </button>
                                 </div>
                             </div>
@@ -123,4 +123,4 @@ const FormCreateEmployee = () => {
   )
 }
 
-export default FormCreateEmployee
+export default FormEditEmployee

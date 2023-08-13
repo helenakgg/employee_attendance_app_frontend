@@ -9,6 +9,7 @@ import Dashboard from "./pages/Dashboard";
 import AdminPage from "./pages/admin";
 import Employees from "./pages/admin/Employees"
 import CreateEmployee from "./pages/admin/CreateEmployee";
+import EditEmployee from "./pages/admin/EditEmployee";
 import EmployeePage from "./pages/employee"
 import AttendaceHistory from "./pages/employee/AttendanceHistory";
 import NotFoundPage from "./pages/not-found";
@@ -65,6 +66,8 @@ function App() {
 				<Route path="/login" element={<LoginPage />} />
 				<Route path="/admin" element={<Employees />} />
 				<Route path="/admin/create" element={<CreateEmployee />} />
+				<Route path="/admin/edit/:id" element={<EditEmployee />} />
+
 				<Route path="/employee/history" element={<AttendaceHistory />} />
         
 				<Route path="*" element={<NotFoundPage/>} />
